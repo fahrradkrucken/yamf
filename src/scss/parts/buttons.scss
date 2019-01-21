@@ -1,0 +1,39 @@
+
+/* Buttons */
+
+.btn, a.btn, button.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  outline: 0;
+  border-radius: 2px;
+
+  display: inline-block;
+  min-width: 88px;
+  padding: 11px 12px;
+  margin: 4px;
+
+  cursor: pointer;
+}
+
+
+.btn {
+  &:hover {
+    box-shadow: yamfElevation(2);
+  }
+  &.flat {
+    background: transparent;
+    &:hover {
+      box-shadow: none;
+      background: rgba(0,0,0,.12);
+    }
+    @each $name, $color in $palette {
+      &.#{$name}:hover {
+        background: yamfColorLighten($name, 4);
+      }
+    }
+  }
+}

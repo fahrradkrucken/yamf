@@ -1,0 +1,46 @@
+/**
+  Typography
+ */
+
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+pre,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #212121;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+$fontStyles: (
+                ('txt-1, h1', 112, 300),
+                ('txt-2, h2', 56, 400),
+                ('txt-3, h3', 45, 400),
+                ('txt-4, h4', 34, 400),
+                ('txt-headline, h5', 24, 400),
+                ('txt-title, h6', 20, 500),
+                ('txt-subheading', 16, 400),
+                ('txt-body-2', 14, 500),
+                ('txt-body-1, p, body', 14, 400),
+                ('txt-caption, label', 12, 400),
+);
+
+/* Font Sizes */
+@each $fontStyleName, $size, $weight in $fontStyles {
+  .#{$fontStyleName} {
+    font-size: #{$size}px;
+    font-weight: $weight;
+  }
+}

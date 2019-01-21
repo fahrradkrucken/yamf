@@ -1,0 +1,147 @@
+/**
+  Variables
+ */
+/**
+  Colors
+ */
+/**
+  Shadows / Elevations
+ */
+/**
+  Typography
+ */
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+pre,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #212121;
+  width: 100%;
+  font-family: 'Roboto', sans-serif; }
+
+/* Font Sizes */
+.txt-1, h1 {
+  font-size: 112px;
+  font-weight: 300; }
+
+.txt-2, h2 {
+  font-size: 56px;
+  font-weight: 400; }
+
+.txt-3, h3 {
+  font-size: 45px;
+  font-weight: 400; }
+
+.txt-4, h4 {
+  font-size: 34px;
+  font-weight: 400; }
+
+.txt-headline, h5 {
+  font-size: 24px;
+  font-weight: 400; }
+
+.txt-title, h6 {
+  font-size: 20px;
+  font-weight: 500; }
+
+.txt-subheading {
+  font-size: 16px;
+  font-weight: 400; }
+
+.txt-body-2 {
+  font-size: 14px;
+  font-weight: 500; }
+
+.txt-body-1, p, body {
+  font-size: 14px;
+  font-weight: 400; }
+
+.txt-caption, label {
+  font-size: 12px;
+  font-weight: 400; }
+
+/* Images and embed */
+img.resp,
+embed.resp,
+iframe.resp,
+object.resp,
+audio.resp,
+video.resp {
+  height: auto;
+  max-width: 100%; }
+
+/* Elevation (Z-axis / shadow) */
+.z-0 {
+  box-shadow: none; }
+
+.z-1 {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32); }
+
+.z-2 {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.32); }
+
+.z-3 {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.32); }
+
+.z-4 {
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.32); }
+
+.z-5 {
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.32); }
+
+.z-6 {
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.32); }
+
+/* Hover Effects */
+[class*='hover-'],
+.btn, a.btn, button.btn {
+  -webkit-transition: .2s;
+  transition: .2s; }
+
+.hover-z1:hover {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32); }
+
+.hover-z2:hover {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.32); }
+
+.hover-z3:hover {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.32); }
+
+.hover-z4:hover {
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.32); }
+
+.hover-z5:hover {
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.32); }
+
+.hover-z6:hover {
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.32); }
+
+.hover-o1:hover {
+  opacity: 0.9; }
+
+.hover-o2:hover {
+  opacity: 0.8; }
+
+.hover-o3:hover {
+  opacity: 0.7; }
+
+.hover-o4:hover {
+  opacity: 0.6; }
+
+.hover-o5:hover {
+  opacity: 0.5; }
+
+.hover-o6:hover {
+  opacity: 0.4; }

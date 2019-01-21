@@ -1,0 +1,41 @@
+
+/* Images and embed */
+img,
+embed,
+iframe,
+object,
+audio,
+video {
+  &.resp {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* Elevation (Z-axis / shadow) */
+.z-0 {
+  box-shadow: none;
+}
+@for $i from 1 through 6 {
+  .#{'z-' + $i} {
+    box-shadow: yamfElevation( $i );
+  }
+}
+
+/* Hover Effects */
+[class*='hover-'],
+.btn, a.btn, button.btn {
+  transition: .2s;
+}
+@each $type in z, o {
+  @for $i from 1 through 6 {
+    .#{'hover-' + $type + $i}:hover {
+      @if $type == z {
+        box-shadow: yamfElevation($i);
+      }
+      @if $type == o {
+        opacity: #{1 - .1 * $i};
+      }
+    }
+  }
+}

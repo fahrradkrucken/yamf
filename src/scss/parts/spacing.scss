@@ -1,0 +1,30 @@
+$margins: (
+  m: margin,
+  mt: margin-top,
+  mb: margin-bottom,
+  ml: margin-left,
+  mr: margin-right,
+);
+
+$paddings: (
+  p: padding,
+  pt: padding-top,
+  pb: padding-bottom,
+  pl: padding-left,
+  pr: padding-right,
+);
+
+/* Margins / Padding */
+
+@for $level from 1 through 5 {
+  @each $name, $type in $margins {
+    .#{$name + '-' + $level} {
+      #{$type}: #{8 * $level}px;
+    }
+  }
+  @each $name, $type in $paddings {
+    .#{$name + '-' + $level} {
+      #{$type}: #{8 * $level}px;
+    }
+  }
+}
