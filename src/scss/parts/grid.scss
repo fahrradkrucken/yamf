@@ -1,0 +1,116 @@
+/**
+  Flex Grid
+ */
+
+@mixin flex-alignment {
+  &a {
+    &-c {
+      margin: auto;
+      align-self: center;
+    }
+    &-hc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &-hr {
+      margin-left: auto;
+    }
+    &-hl {
+      margin-right: auto;
+    }
+    &-vc {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    &-vb {
+      margin-top: auto;
+    }
+    &-vt {
+      margin-bottom: auto;
+    }
+  }
+}
+
+@mixin flex-columns {
+  @for $i from 1 through 12 {
+    &#{$i} {
+      width: percentage(1 / 12 * $i);
+    }
+  }
+}
+
+@mixin flex-orders {
+  @for $i from 1 through 12 {
+    &#{'o' + $i} {
+      order: $i;
+    }
+  }
+}
+
+.block {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: yamfSize(1);
+
+  // It's like Container
+  &-wrap {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    padding-left: yamfSize(2);
+    padding-right: yamfSize(2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // It's like wrapper for blocks (for grid)
+  &-grid {
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+  }
+  &-{
+    @include flex-alignment;
+  }
+}
+@include media-xs {
+  .xs {
+    @include flex-columns;
+    @include flex-orders;
+    @include flex-alignment;
+  }
+}
+
+@include media-sm-up {
+  .block-wrap {
+    width: #{$bp-sm}px;
+  }
+  .sm {
+    @include flex-columns;
+    @include flex-orders;
+    @include flex-alignment;
+  }
+}
+
+@include media-md-up {
+  .block-wrap {
+    width: #{$bp-md}px;
+  }
+  .md {
+    @include flex-columns;
+    @include flex-orders;
+    @include flex-alignment;
+  }
+}
+
+@include media-lg-up {
+  .block-wrap {
+    width: #{$bp-lg}px;
+  }
+  .lg {
+    @include flex-columns;
+    @include flex-orders;
+    @include flex-alignment;
+  }
+}

@@ -1,86 +1,38 @@
-/**
-  Colors
- */
-$palette: (
-        red: #F44336,
-        purple: #673AB7,
-        blue: #2196F3,
-        teal: #009688,
-        green: #4CAF50,
-        yellow: #FFEB3B,
-        orange: #FF9800,
-        grey: #808080,
-);
-
+// --
+// -- Colors
+// --
 @function yamfColor($color) {
   @if map_has_key($palette, $color) {
     @return map_get($palette, $color)
   }
 }
-
 @function yamfColorDarken($color, $level) {
-  @return darken(yamfColor($color), 8 * $level)
+  @return darken(yamfColor($color), 10 * $level)
 }
-
 @function yamfColorLighten($color, $level) {
-  @return lighten(yamfColor($color), 8 * $level)
+  @return lighten(yamfColor($color), 10 * $level)
 }
 
-/**
-  Shadows / Elevations
- */
-
-// Material Shadows
-
-// Source https://codepen.io/shyndman/pen/ojxmdY
-//$umbra: rgba(0, 0, 0, 0.2);
-//$penumbra: rgba(0, 0, 0, 0.14);
-//$ambient: rgba(0, 0, 0, 0.12);
-//
-//$shadows: (
-//        1: (
-//                        (0 3px 1px -2px $umbra),
-//                        (0 2px 2px 0 $penumbra),
-//                        (0 1px 5px 0 $ambient),
-//        ),
-//        2: (
-//                        (0 3px 3px -2px $umbra),
-//                        (0 3px 4px 0 $penumbra),
-//                        (0 1px 8px 0 $ambient),
-//        ),
-//        3: (
-//                        (0 2px 4px -1px $umbra),
-//                        (0 4px 5px 0 $penumbra),
-//                        (0 1px 10px 0 $ambient),
-//        ),
-//        4: (
-//                        (0 3px 5px -1px $umbra),
-//                        (0 6px 10px 0 $penumbra),
-//                        (0 1px 18px 0 $ambient),
-//        ),
-//        5: (
-//                        (0 5px 5px -3px $umbra),
-//                        (0 8px 10px 1px $penumbra),
-//                        (0 3px 14px 2px $ambient),
-//        ),
-//        6: (
-//                        (0 8px 10px -5px $umbra),
-//                        (0 16px 24px 2px $penumbra),
-//                        (0 6px 30px 5px $ambient),
-//        )
-//);
-
-// Simple (not material) shadows
-$opacity: .32;
-$shadows: (
-        1: (0 0 4px 0  rgba(#000, $opacity)),
-        2: (0 0 6px 0  rgba(#000, $opacity)),
-        3: (0 0 8px 0  rgba(#000, $opacity)),
-        4: (0 0 12px 0 rgba(#000, $opacity)),
-        5: (0 0 16px 0 rgba(#000, $opacity)),
-        6: (0 0 24px 0 rgba(#000, $opacity)),
+// --
+// -- Shadows / Elevations
+// --
+$elevationOpacity: .32;
+$elevationShadows: (
+        1: (0 0 4px 0  rgba(#000, $elevationOpacity)),
+        2: (0 0 6px 0  rgba(#000, $elevationOpacity)),
+        3: (0 0 8px 0  rgba(#000, $elevationOpacity)),
+        4: (0 0 12px 0 rgba(#000, $elevationOpacity)),
+        5: (0 0 16px 0 rgba(#000, $elevationOpacity)),
+        6: (0 0 24px 0 rgba(#000, $elevationOpacity)),
 );
-
 @function yamfElevation($level) {
-  @return map_get($shadows, $level)
+  @return map_get($elevationShadows, $level)
+}
+
+// --
+// -- Size in pixels
+// --
+$baseSize: 8;
+@function yamfSize($level) {
+  @return #{$baseSize * $level}px;
 }

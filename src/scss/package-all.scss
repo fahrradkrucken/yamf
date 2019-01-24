@@ -2,6 +2,14 @@
 @import "common/functions";
 @import "common/mixins";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 @import "parts/typography";
 @import "parts/grid";
+@import "parts/spacing";
+@import "parts/background";
 @import "parts/helpers";

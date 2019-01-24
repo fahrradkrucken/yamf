@@ -24,23 +24,85 @@ h6 {
   font-family: 'Roboto', sans-serif;
 }
 
-$fontStyles: (
-                ('txt-1, h1', 112, 300),
-                ('txt-2, h2', 56, 400),
-                ('txt-3, h3', 45, 400),
-                ('txt-4, h4', 34, 400),
-                ('txt-headline, h5', 24, 400),
-                ('txt-title, h6', 20, 500),
-                ('txt-subheading', 16, 400),
-                ('txt-body-2', 14, 500),
-                ('txt-body-1, p, body', 14, 400),
-                ('txt-caption, label', 12, 400),
-);
+.fs-1, h1 {
+  font-size: $fs-h1;
+  font-weight: 300;
+}
 
-/* Font Sizes */
-@each $fontStyleName, $size, $weight in $fontStyles {
-  .#{$fontStyleName} {
-    font-size: #{$size}px;
-    font-weight: $weight;
+.fs-2, h2 {
+  font-size: $fs-h2;
+  font-weight: 400;
+}
+
+.fs-3, h3 {
+  font-size: $fs-h3;
+  font-weight: 400;
+}
+
+.fs-4, h4 {
+  font-size: $fs-h4;
+  font-weight: 400;
+}
+
+.fs-5, h5 {
+  font-size: $fs-h5;
+  font-weight: 400;
+}
+
+.fs-6, .fs-title, h6 {
+  font-size: $fs-h6;
+  font-weight: 500;
+}
+
+.fs-caption {
+  font-size: $fs-caption;
+  font-weight: 400;
+}
+
+.fs-subtitle {
+  font-size: $fs-subtitle;
+  font-weight: 500;
+}
+
+.fs-body-1, p, body {
+  font-size: $fs-p;
+  font-weight: 400;
+}
+
+.txt {
+  // text alignment
+  &-a {
+    &c {
+      text-align: center;
+    }
+    &l {
+      text-align: left;
+    }
+    &r {
+      text-align: right;
+    }
   }
+
+  // text color
+  &-c {
+    @each $name, $color in $palette {
+      &#{'-' + $name} {
+        color: yamfColor($name);
+        // text color variations
+        @if ($name != white) {
+          @if ($name != black) {
+            @for $i from 1 through 2 {
+              &#{'-l' + $i} {
+                color: yamfColorLighten($name, $i);
+              }
+              &#{'-d' + $i} {
+                color: yamfColorDarken($name, $i);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
 }

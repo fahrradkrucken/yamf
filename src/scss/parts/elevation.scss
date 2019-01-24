@@ -1,0 +1,12 @@
+/**
+  Elevation (Z-axis / shadow)
+ */
+
+.z-0 {
+  box-shadow: none;
+}
+@for $i from 1 through 6 {
+  .#{'z-' + $i} {
+    box-shadow: yamfElevation( $i );
+  }
+}
