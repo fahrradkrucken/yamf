@@ -1,16 +1,16 @@
 // --
 // -- Colors
 // --
-@function yamfColor($color) {
+@function yamColor($color) {
   @if map_has_key($palette, $color) {
     @return map_get($palette, $color)
   }
 }
-@function yamfColorDarken($color, $level) {
-  @return darken(yamfColor($color), 10 * $level)
+@function yamColorDarken($color, $level) {
+  @return darken(yamColor($color), 8 * $level)
 }
-@function yamfColorLighten($color, $level) {
-  @return lighten(yamfColor($color), 10 * $level)
+@function yamColorLighten($color, $level) {
+  @return lighten(yamColor($color), 8 * $level)
 }
 
 // --
@@ -25,7 +25,7 @@ $elevationShadows: (
         5: (0 0 16px 0 rgba(#000, $elevationOpacity)),
         6: (0 0 24px 0 rgba(#000, $elevationOpacity)),
 );
-@function yamfElevation($level) {
+@function yamElevation($level) {
   @return map_get($elevationShadows, $level)
 }
 
@@ -33,6 +33,6 @@ $elevationShadows: (
 // -- Size in pixels
 // --
 $baseSize: 8;
-@function yamfSize($level) {
+@function yamSize($level) {
   @return #{$baseSize * $level}px;
 }

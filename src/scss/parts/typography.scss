@@ -27,46 +27,57 @@ h6 {
 .fs-1, h1 {
   font-size: $fs-h1;
   font-weight: 300;
+  padding: 32px 0;
 }
 
 .fs-2, h2 {
   font-size: $fs-h2;
   font-weight: 400;
+  padding: 24px 0;
 }
 
 .fs-3, h3 {
   font-size: $fs-h3;
   font-weight: 400;
+  padding: 16px 0;
 }
 
 .fs-4, h4 {
   font-size: $fs-h4;
   font-weight: 400;
+  padding: 8px 0;
 }
 
 .fs-5, h5 {
   font-size: $fs-h5;
   font-weight: 400;
+  padding: 8px 0;
 }
 
 .fs-6, .fs-title, h6 {
   font-size: $fs-h6;
   font-weight: 500;
+  padding: 4px 0 8px 0;
 }
 
 .fs-caption {
   font-size: $fs-caption;
   font-weight: 400;
+  padding: 4px 0;
 }
 
 .fs-subtitle {
   font-size: $fs-subtitle;
   font-weight: 500;
+  padding: 4px 0;
 }
 
 .fs-body-1, p, body {
   font-size: $fs-p;
   font-weight: 400;
+}
+.fs-body-1, p {
+  padding: 4px 0 8px 0;
 }
 
 .txt {
@@ -83,20 +94,36 @@ h6 {
     }
   }
 
+  // text styles
+  &-s {
+    &b {
+      font-weight: bold;
+    }
+    &i {
+      font-style: italic;
+    }
+    &n {
+      font-style: normal;
+    }
+    &u {
+
+    }
+  }
+
   // text color
   &-c {
     @each $name, $color in $palette {
       &#{'-' + $name} {
-        color: yamfColor($name);
+        color: yamColor($name);
         // text color variations
         @if ($name != white) {
           @if ($name != black) {
             @for $i from 1 through 2 {
               &#{'-l' + $i} {
-                color: yamfColorLighten($name, $i);
+                color: yamColorLighten($name, $i);
               }
               &#{'-d' + $i} {
-                color: yamfColorDarken($name, $i);
+                color: yamColorDarken($name, $i);
               }
             }
           }

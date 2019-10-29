@@ -7,6 +7,6 @@
 }
 @for $i from 1 through 6 {
   .#{'z-' + $i} {
-    box-shadow: yamfElevation( $i );
+    box-shadow: yamElevation( $i );
   }
 }

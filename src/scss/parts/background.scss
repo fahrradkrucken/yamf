@@ -1,19 +1,20 @@
 /**
   Background Colors
  */
+
 .bg {
   @each $name, $color in $palette {
     &#{'-' + $name} {
-      background-color: yamfColor($name);
+      background: yamColor($name);
       // text color variations
       @if ($name != white) {
         @if ($name != black) {
           @for $i from 1 through 2 {
             &#{'-l' + $i} {
-              background-color: yamfColorLighten($name, $i);
+              background: yamColorLighten($name, $i);
             }
             &#{'-d' + $i} {
-              background-color: yamfColorDarken($name, $i);
+              background: yamColorDarken($name, $i);
             }
           }
         }
@@ -21,3 +22,4 @@
     }
   }
 }
+

@@ -3,7 +3,7 @@
  */
 
 @mixin flex-alignment {
-  &a {
+  &-a {
     &-c {
       margin: auto;
       align-self: center;
@@ -51,15 +51,15 @@
   display: block;
   width: 100%;
   position: relative;
-  padding: yamfSize(1);
+  padding: yamSize(1);
 
   // It's like Container
   &-wrap {
     display: block;
     position: relative;
     max-width: 100%;
-    padding-left: yamfSize(2);
-    padding-right: yamfSize(2);
+    padding-left: yamSize(2);
+    padding-right: yamSize(2);
     margin-left: auto;
     margin-right: auto;
   }
@@ -70,7 +70,7 @@
     flex: 0 1 auto;
     flex-flow: row wrap;
   }
-  &-{
+  &{
     @include flex-alignment;
   }
 }
