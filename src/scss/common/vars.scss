@@ -8,9 +8,9 @@ $bp-md: 960;
 $bp-lg: 1280;
 
 // font sizes
-$fs-h1: 112px;
+$fs-h1: 82px;
 $fs-h2: 56px;
-$fs-h3: 45px;
+$fs-h3: 42px;
 $fs-h4: 34px;
 $fs-h5: 24px;
 $fs-h6: 20px;
@@ -23,15 +23,11 @@ $fs-btn-sm: 12px;
 $fs-btn: 14px;
 
 // palette
-$palette: (
-        red: #F44336,
-        purple: #673AB7,
-        blue: #2196F3,
-        teal: #009688,
-        green: #4CAF50,
-        yellow: #FFEB3B,
-        orange: #FF9800,
-        grey: #808080,
-        white: #fff,
-        black: #000,
-);
+$color-major: #673AB7;
+$color-minor: #2196F3;
+$color-ok: #4CAF50;
+$color-err: #F44336;
+$color-info: #FF9800;
+$color-black: #000;
+$color-gray: #808080;
+$color-white: #fff;

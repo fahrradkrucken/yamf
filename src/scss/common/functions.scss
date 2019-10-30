@@ -1,16 +1,11 @@
 // --
 // -- Colors
 // --
-@function yamColor($color) {
-  @if map_has_key($palette, $color) {
-    @return map_get($palette, $color)
-  }
-}
 @function yamColorDarken($color, $level) {
-  @return darken(yamColor($color), 8 * $level)
+  @return darken($color, 8 * $level)
 }
 @function yamColorLighten($color, $level) {
-  @return lighten(yamColor($color), 8 * $level)
+  @return lighten($color, 8 * $level)
 }
 
 // --
