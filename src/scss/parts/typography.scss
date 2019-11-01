@@ -19,9 +19,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: #212121;
+  color: $color-font;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-major;
 }
 
 .fs-1, h1 {
@@ -54,7 +54,7 @@ h6 {
   padding: 8px 0;
 }
 
-.fs-6, .fs-title, h6 {
+.fs-6, h6 {
   font-size: $fs-h6;
   font-weight: 500;
   padding: 4px 0 8px 0;
@@ -76,59 +76,62 @@ h6 {
   font-size: $fs-p;
   font-weight: 400;
 }
+
 .fs-body-1, p {
   padding: 4px 0 8px 0;
 }
 
 .txt {
   // text alignment
-  &-a {
-    &c {
-      text-align: center;
-    }
-    &l {
-      text-align: left;
-    }
-    &r {
-      text-align: right;
-    }
+
+  &-center {
+    text-align: center;
   }
 
+  &-left {
+    text-align: left;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+
   // text styles
-  &-s {
-    &b {
-      font-weight: bold;
-    }
-    &i {
-      font-style: italic;
-    }
-    &n {
+  &-style {
+    &-n {
       font-style: normal;
     }
-    &u {
 
+    &-b, strong, b {
+      font-weight: bold;
+    }
+
+    &-i, cite, em, i {
+      font-style: italic;
+    }
+
+    &-u, u {
+      text-decoration: underline;
+    }
+
+    &-d, del {
+      text-decoration: line-through;
+    }
+
+    &-code, &-kbd, code, kbd {
+      padding: 2px 4px;
+      background: $color-dark;
+      color: $color-white;
+      border-radius: 2px;
     }
   }
 
   // text color
-  &-c {
-    @each $name, $color in $palette {
-      &#{'-' + $name} {
-        color: yamColor($name);
-        // text color variations
-        @if ($name != white) {
-          @if ($name != black) {
-            @for $i from 1 through 2 {
-              &#{'-l' + $i} {
-                color: yamColorLighten($name, $i);
-              }
-              &#{'-d' + $i} {
-                color: yamColorDarken($name, $i);
-              }
-            }
-          }
-        }
-      }
+
+  @each $name, $color in $palette {
+    &#{'-' + $name} {
+      color: $color;
     }
   }
 

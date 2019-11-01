@@ -5,21 +5,7 @@
 .bg {
   @each $name, $color in $palette {
     &#{'-' + $name} {
-      background: yamColor($name);
-      // text color variations
-      @if ($name != white) {
-        @if ($name != black) {
-          @for $i from 1 through 2 {
-            &#{'-l' + $i} {
-              background: yamColorLighten($name, $i);
-            }
-            &#{'-d' + $i} {
-              background: yamColorDarken($name, $i);
-            }
-          }
-        }
-      }
+      background-color: $color;
     }
   }
 }
-

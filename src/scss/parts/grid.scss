@@ -3,37 +3,36 @@
  */
 
 @mixin flex-alignment {
-  &-a {
-    &-c {
-      margin: auto;
-      align-self: center;
-    }
-    &-hc {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    &-hr {
-      margin-left: auto;
-    }
-    &-hl {
-      margin-right: auto;
-    }
-    &-vc {
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-    &-vb {
-      margin-top: auto;
-    }
-    &-vt {
-      margin-bottom: auto;
-    }
+  &-center {
+    margin: auto;
+    align-self: center;
+    justify-self: center;
+  }
+  &-h-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &-h-right {
+    margin-left: auto;
+  }
+  &-h-left {
+    margin-right: auto;
+  }
+  &-v-center {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  &-v-bottom {
+    margin-top: auto;
+  }
+  &-v-top {
+    margin-bottom: auto;
   }
 }
 
 @mixin flex-columns {
   @for $i from 1 through 12 {
-    &#{$i} {
+    &-#{$i} {
       width: percentage(1 / 12 * $i);
     }
   }
@@ -41,13 +40,13 @@
 
 @mixin flex-orders {
   @for $i from 1 through 12 {
-    &#{'o' + $i} {
+    &-#{'o' + $i} {
       order: $i;
     }
   }
 }
 
-.block {
+.box {
   display: block;
   width: 100%;
   position: relative;
@@ -70,10 +69,12 @@
     flex: 0 1 auto;
     flex-flow: row wrap;
   }
-  &{
+
+  & {
     @include flex-alignment;
   }
 }
+
 @include media-xs {
   .xs {
     @include flex-columns;
@@ -83,7 +84,7 @@
 }
 
 @include media-sm-up {
-  .block-wrap {
+  .box-wrap {
     width: #{$bp-sm}px;
   }
   .sm {
@@ -94,7 +95,7 @@
 }
 
 @include media-md-up {
-  .block-wrap {
+  .box-wrap {
     width: #{$bp-md}px;
   }
   .md {
@@ -105,7 +106,7 @@
 }
 
 @include media-lg-up {
-  .block-wrap {
+  .box-wrap {
     width: #{$bp-lg}px;
   }
   .lg {

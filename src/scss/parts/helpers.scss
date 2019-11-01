@@ -4,27 +4,52 @@
 
 
 //  Background Image blocks
-
-.bimg {
+.img {
   &-3x2 {
     padding-bottom: percentage(2/3);
   }
+
   &-3x4 {
     padding-bottom: percentage(4/3);
   }
+
   &-4x3 {
     padding-bottom: percentage(3/4);
   }
+
   &-5x4 {
     padding-bottom: percentage(4/5);
   }
+
   &-16x9 {
     padding-bottom: percentage(9/16);
   }
+
   &-16x10 {
     padding-bottom: percentage(10/16);
   }
+
   &-21x9 {
     padding-bottom: percentage(9/21);
   }
+
+  &-fit {
+    &-cover {
+      background-size: cover;
+    }
+
+    &-contain {
+      background-size: contain;
+    }
+
+    &-in-box {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// other
+.fullwidth {
+  width: 100%;
 }

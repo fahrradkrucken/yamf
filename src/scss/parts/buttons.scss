@@ -24,6 +24,7 @@
   width: auto;
   max-width: 100%;
 
+  color: $color-white;
   font-size: $fs-btn;
   font-weight: 600;
   text-decoration: none;
@@ -48,32 +49,23 @@
 
   // Basic colors
   @each $name, $color in $palette {
-    @if ($name != black) {
-      @if ($name != white) {
-        &#{'-' + $name} {
-          background: yamColor($name);
-          &:hover {
-            background: yamColorLighten($name, 1);
-          }
+    @if ($name != white) {
+      &#{'-' + $name} {
+        background-color: $color;
+
+        &:hover {
+          background: yamColorLighten($color, 2);
         }
       }
-    }
-  }
-  &-black {
-    background: yamColor(black);
-    &:hover {
-      background: yamColorLighten(black, 4);
     }
   }
 
   // Raised ------------------
   &-rise {
     box-shadow: yamElevation(2);
+
     &:hover {
       box-shadow: yamElevation(4);
-    }
-    &.btn-white {
-      background: yamColor(white);
     }
   }
 
@@ -81,6 +73,7 @@
   &-link {
     background: transparent;
   }
+
   // Outline ---------------
   &-outl {
     background: transparent;
@@ -88,12 +81,15 @@
 
     &.btn {
       @each $name, $color in $palette {
-        &#{'-' + $name} {
-          border-color: yamColor($name);
+        @if ($name != white) {
+          &#{'-' + $name} {
+            border-color: $color;
+          }
         }
       }
     }
   }
+
   // Outline & Link hover
   &-link,
   &-outl {
@@ -102,7 +98,7 @@
         @if ($name != white) {
           &#{'-' + $name} {
             &:hover {
-              background: rgba(yamColor($name), .12);
+              background: rgba($color, .12);
             }
           }
         }

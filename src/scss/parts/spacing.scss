@@ -16,7 +16,7 @@ $paddings: (
 
 /* Margins / Padding */
 
-@for $level from 1 through 5 {
+@for $level from 1 through 8 {
   @each $name, $type in $margins {
     .#{$name + '-' + $level} {
       #{$type}: #{8 * $level}px;

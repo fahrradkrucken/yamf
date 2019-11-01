@@ -28,6 +28,23 @@ $color-minor: #2196F3;
 $color-ok: #4CAF50;
 $color-err: #F44336;
 $color-info: #FF9800;
-$color-black: #000;
+$color-dark: #212121;
 $color-gray: #808080;
 $color-white: #fff;
+
+$palette: (
+  major: $color-major,
+  minor: $color-minor,
+  ok: $color-ok,
+  err: $color-err,
+  info: $color-info,
+  dark: $color-dark,
+  gray: $color-gray,
+  white: $color-white,
+);
+
+// palette additional
+$color-font: #212121;
+
+// fonts
+$font-major: 'Roboto', sans-serif;
